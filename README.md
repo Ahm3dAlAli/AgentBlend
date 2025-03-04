@@ -2,33 +2,45 @@
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/your-username/agentblend/main/assets/logo.svg" alt="AgentBlend Logo" width="200" />
-  <p><em>Empowering the future of autonomous Web3 agents</em></p>
+  <p><em>Empowering the future of autonomous Web3 agents with AI-powered orchestration</em></p>
   
   [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
   [![Hackathon](https://img.shields.io/badge/Hackathon-Seeds%20of%20Agentic%20Future-orange)](https://agenticfuture.ai/)
+  [![Claude](https://img.shields.io/badge/AI-Claude%203-purple)](https://www.anthropic.com/claude)
 </div>
 
 ---
 
-AgentBlend is a decentralized multi-agent orchestration framework designed for the Seeds of Agentic Future hackathon. It enables the creation, deployment, and coordination of autonomous AI agents across blockchain networks.
+## 🧠 Overview
+
+AgentBlend is a decentralized multi-agent orchestration framework designed for the Seeds of Agentic Future hackathon. It enables the creation, deployment, and coordination of autonomous AI agents across blockchain networks, powered by Anthropic's Claude LLM for advanced reasoning and decision-making.
 
 ## ✨ Features
 
+- 🤖 **AI-Powered Agents**: Leverage Claude for intelligent task analysis and execution
 - 🧩 **Composable Agent Architecture**: Mix and match specialized agents for different blockchain tasks
 - ⛓️ **Cross-Chain Compatibility**: Seamlessly operate across multiple blockchain ecosystems
 - 🔄 **Decentralized Coordination**: No central point of failure for agent orchestration
 - 🧠 **Knowledge Sharing**: Agents learn from each other's experiences and outcomes
 - 📑 **Programmable Workflows**: Define complex multi-step processes spanning multiple agents
+- 🔍 **Automated Capability Discovery**: Use AI to detect and validate agent capabilities
+- 📋 **Smart Workflow Generation**: Automatically create optimized workflows for complex tasks
 
 ## 🏗️ Architecture
 
-AgentBlend follows a modular architecture with the following core components:
+AgentBlend follows a modular architecture with the following components:
 
 ### 🔋 Core Layer
 - 📚 **Agent Registry**: Discover, register, and deploy specialized AI agents
 - 🎮 **Task Orchestration Engine**: Coordinate complex tasks across multiple agents
 - 🧮 **Decision Engine**: Optimize agent selection and execution strategies
 - 💾 **Agent Memory Store**: Distributed knowledge repository for agents
+
+### 🧠 LLM Layer
+- 🔌 **Claude Integration**: Interface with Anthropic's Claude for advanced reasoning
+- 📋 **Prompt Management**: Library of optimized prompts for different agent tasks
+- 🔍 **Output Parsing**: Extract structured data from language model responses
+- ⚙️ **Task Processing**: Generate and optimize workflows for complex tasks
 
 ### 🔌 Infrastructure Layer
 - 🌉 **Cross-Chain Communication Protocol**: Enable agents to interact across multiple blockchains
@@ -47,6 +59,7 @@ AgentBlend follows a modular architecture with the following core components:
 - Node.js 16+
 - Yarn or npm
 - Ethereum-compatible blockchain for full functionality (Ganache for local development)
+- Claude API key from Anthropic (for LLM features)
 
 ### 💻 Installation
 
@@ -71,6 +84,10 @@ API_KEY=your_secret_api_key
 ETH_RPC_URL=http://localhost:8545
 ETH_PRIVATE_KEY=your_ethereum_private_key_for_deployment
 LOG_LEVEL=info
+
+# Claude LLM Configuration
+CLAUDE_API_KEY=your_claude_api_key
+CLAUDE_MODEL=claude-3-sonnet-20240229
 ```
 
 4. Build the project:
@@ -86,6 +103,48 @@ npm start
 ```
 
 The server will be running at `http://localhost:3000` 🎉
+
+## 💡 Using Claude-Powered Features
+
+AgentBlend leverages Claude for several intelligent features:
+
+### 🔍 Automatic Workflow Generation
+
+```javascript
+// Generate a workflow for a complex task
+const workflowData = await llmService.generateTaskWorkflow(
+  "Find the best yield farming opportunity across Uniswap, Curve, and Aave, then execute a trade with 5 ETH"
+);
+```
+
+### 📊 Agent Capability Validation
+
+```javascript
+// Validate and refine agent capabilities
+const validatedCapabilities = await llmService.validateAgentCapabilities(
+  "DeFi trading agent specializing in yield optimization and arbitrage",
+  ["trade_execution", "yield_farming", "market_analysis"]
+);
+```
+
+### 🔍 Task Result Summarization
+
+```javascript
+// Generate a human-readable summary of task results
+const summary = await llmService.summarizeTaskResults(
+  taskId,
+  taskDescription,
+  stepResults
+);
+```
+
+### ⚡ Run LLM Demo
+
+Test the Claude integration with our demo script:
+
+```bash
+npm run demo:llm
+```
 
 ## 🔌 API Endpoints
 
@@ -119,6 +178,15 @@ The server will be running at `http://localhost:3000` 🎉
 | `GET` | `/api/analytics/agents/:id/performance` | Get agent performance stats |
 | `GET` | `/api/analytics/tasks/statistics` | Get task statistics |
 | `GET` | `/api/analytics/system/overview` | Get system overview |
+
+### 🧠 LLM Services
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/api/llm/generate-workflow` | Generate a workflow from task description |
+| `POST` | `/api/llm/optimize-workflow` | Optimize an existing workflow |
+| `POST` | `/api/llm/validate-capabilities` | Validate agent capabilities |
+| `POST` | `/api/llm/summarize-results` | Summarize task results |
 
 ## 🏁 Creating Your First Agent
 
@@ -207,6 +275,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🙏 Acknowledgements
 
 - Built for the Seeds of Agentic Future Hackathon 2025 🏆
+- Powered by [Anthropic's Claude](https://www.anthropic.com/claude) for intelligent agent capabilities
 - Thanks to all contributors and participants! 🎉
 
 ---
